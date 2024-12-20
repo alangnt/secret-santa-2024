@@ -4,11 +4,13 @@ import React, { useCallback } from 'react';
 import { CanvasElement } from '@/types/elements';
 import { CanvasElements } from './CanvasElements';
 
+type ToolType = 'select' | 'rectangle' | 'circle' | 'text' | 'image';
+
 interface CanvasProps {
   elements: CanvasElement[];
-  selectedTool: string;
+  selectedTool: ToolType;
   selectedElementId: string | null;
-  onAddElement: (type: any, x: number, y: number) => void;
+  onAddElement: (type: ToolType, x: number, y: number) => void;
   onSelectElement: (id: string) => void;
   onUpdateElement: (id: string, updates: Partial<CanvasElement>) => void;
   onToolUse: () => void;
