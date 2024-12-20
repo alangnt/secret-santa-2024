@@ -8,7 +8,7 @@ interface CanvasProps {
   elements: CanvasElement[];
   selectedTool: string;
   selectedElementId: string | null;
-  onAddElement: (type: never, x: number, y: number) => void;
+  onAddElement: (type: any, x: number, y: number) => void;
   onSelectElement: (id: string) => void;
   onUpdateElement: (id: string, updates: Partial<CanvasElement>) => void;
   onToolUse: () => void;

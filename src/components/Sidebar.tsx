@@ -1,6 +1,8 @@
 import React from 'react';
 import { Mouse, Square, Circle, Type, Image } from 'lucide-react';
 
+type ElementType = "rectangle" | "circle" | "text" | "image" | "select";
+
 const tools = [
   { icon: Mouse, name: 'select', label: 'Select' },
   { icon: Square, name: 'rectangle', label: 'Rectangle' },
@@ -10,8 +12,8 @@ const tools = [
 ] as const;
 
 interface SidebarProps {
-  selectedTool: string;
-  onSelectTool: (tool: string) => void;
+  selectedTool: ElementType | "select";
+  onSelectTool: (tool: ElementType | "select") => void;
 }
 
 export function Sidebar({ selectedTool, onSelectTool }: SidebarProps) {
